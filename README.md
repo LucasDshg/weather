@@ -1,27 +1,77 @@
 # Weather
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.14.
+A public weather application with Angular using api`s of [unsplash](https://unsplash.com/documentation) and [accuweather](https://developer.accuweather.com/accuweather-forecast-api/apis)
 
-## Development server
+In the end the project will be like [this](https://www.figma.com/proto/63sYzKDV0wxbgZhtO4mn2m/Weather?page-id=0%3A1&node-id=2%3A3&viewport=241%2C48%2C0.49&scaling=scale-down&starting-point-node-id=2%3A3)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Compressed folder
+```
+src/
+├── app/
+│		├── keys/
+│		├── modules/
+│		│		├────── hourly/
+│		│		│       ├────── service/
+│		│		│       │				└────── hourly.service.ts
+│		│		│       ├────── hourly.component.html
+│		│		│       ├────── hourly.component.scss
+│		│		│       ├────── hourly.component.spect.ts
+│		│		│       ├────── hourly.component.ts
+│		│		│       └────── hourly.module.ts
+│		│		├────── result/
+│		│		│       ├────── result.component.html
+│		│		│       ├────── result.component.scss
+│		│		│       ├────── result.component.spect.ts
+│		│		│       ├────── result.component.ts
+│		│		│       └────── result.module.ts
+│		│		├────── search-location/
+│		│		│       ├────── service/
+│		│		│       │				└────── search-location.service.ts
+│		│		│       ├────── search-location.component.html
+│		│		│       ├────── search-location.component.scss
+│		│		│       ├────── search-location.component.spect.ts
+│		│		│       ├────── search-location.component.ts
+│		│		│       └────── search-location.module.ts
+│		│		└────── ten-days/
+│		│		        ├────── service/
+│		│		        │				└────── ten-days.service.ts
+│		│		        ├────── ten-days.component.html
+│		│		        ├────── ten-days.component.scss
+│		│		        ├────── ten-days.component.spect.ts
+│		│		        ├────── ten-days.component.ts
+│		│		        └────── ten-days.module.ts
+│		└── shared/
+│				├────── components/
+│				│       ├────── accordion/
+│				│       │       ├────── accordion.component.html
+│				│       │       ├────── accordion.component.scss
+│				│       │       ├────── accordion.component.spect.ts
+│				│       │       ├────── accordion.component.ts
+│				│       │       └────── accordion.module.ts
+│				│       └────── card/
+│				│               ├────── card.component.html
+│				│               ├────── card.component.scss
+│				│               ├────── card.component.spect.ts
+│				│               ├────── card.component.ts
+│				│               └────── card.module.ts
+│				└────── service/
+│				        ├────── search.service.ts
+│				        └────── theme.service.ts
+└────── assets/
+				└────── scss/
+				        ├──── mixin/				
+				        ├──── _accordion.scss				
+				        ├──── _button.scss				
+				        ├──── _card.scss				
+				        ├──── _colors.scss				
+				        ├──── _fonts.scss				
+				        ├──── _grid.scss				
+				        ├──── _input.scss				
+				        ├──── _list.scss				
+				        ├──── _reboot.scss				
+				        ├──── _root.scss				
+				        ├──── _variables.scss				
+				        └──── styles.scss				
 
-## Code scaffolding
+```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
