@@ -1,0 +1,118 @@
+// Colors dark theme
+
+$black: #0c0c0c !default;
+$white: #ffffff !default;
+
+$theme-dark: () !default;
+$theme-dark: ()
+  map-get(
+    (
+      "color-1" $black,
+      "color-2": #1f1f1f,
+      "color-3": #838383,
+      "color-4": #9c9c9c,
+      "color-5": #c4c4c4,
+      "color-6": #f5f5f5,
+      "color-7" $white
+    )
+  );
+
+// Colors light theme
+$theme-light: () !default;
+$theme-light: ()
+  map-get(
+    (
+      "color-1" $white,
+      "color-2": #838383,
+      "color-3": #9c9c9c,
+      "color-4": #c4c4c4,
+      "color-5": #e5e5e5,
+      "color-6": #f5f5f5,
+      "color-7" $black
+    )
+  );
+
+$body-color: var(--color-1) !default;
+$body-bg: var(--color-7) !default;
+
+//Border
+$border-width: 1px !default;
+$border-color: var(--color-4) !default;
+$border-radius: 1.25rem !default;
+$border-radius-sm: 0.625rem !default;
+$border-radius-lg: 1.875rem !default;
+$border-radius-none: 0 !default;
+
+//Box
+$box-shadow-sm: 0 0 0.625rem rgba(var(--color-7), 0.25) !default;
+$box-shadow-none: none !default;
+
+// Typography
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+$font-family-sans-serif: Roboto !default;
+$font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
+  "Liberation Mono", "Courier New", monospace !default;
+$font-family-base: $font-family-sans-serif !default;
+
+$font-size-base: 1rem !default;
+$font-size-lg: 3rem !default;
+$font-size-sm: 0.75rem !default;
+
+$font-weight-lighter: lighter !default;
+$font-weight-light: 300 !default;
+$font-weight-normal: 400 !default;
+$font-weight-bold: 700 !default;
+$font-weight-bolder: bolder !default;
+$font-weight-base: $font-weight-normal !default;
+
+$line-height-base: 1 !default;
+$line-height-48: 3rem !default;
+$line-height-38: 2.375rem !default;
+$line-height-30: 1.875rem !default;
+$line-height-24: 1.5rem !default;
+
+$h1-font-size: 3.5rem !default;
+$h2-font-size: 2.5rem !default;
+$h3-font-size: 2rem !default;
+$h4-font-size: 1.5rem !default;
+$h5-font-size: 1.125rem !default;
+$h6-font-size: $font-size-base !default;
+
+// Card
+$card-padding-x: 1.625rem !default;
+$card-padding-y: 1.625rem !default;
+$card-bg-color: var(--color-7) !default;
+$card-color: var(--color-1) !default;
+$card-border: $border-width solid $border-color !default;
+$card-border-radius: $border-radius !default;
+$card-shadow: $box-shadow !default;
+
+// Buttons
+$btn-padding-y: 0.875rem !default;
+$btn-padding-x: 0.875rem !default;
+$btn-font-family: $font-family-base !default;
+$btn-font-size: $font-size-base !default;
+$btn-line-height: $line-height-base !default;
+$btn-border-width: 0 !default;
+$btn-font-weight: $font-weight-normal !default;
+
+$btn-color: var(--color-1) !default;
+$btn-bg-color: var(--color-7) !default;
+
+$btn-focus-box-shadow: $box-shadow-sm !default;
+$btn-disabled-opacity: 0.65 !default;
+
+$btn-disabled-color: var(--color-5) !default;
+
+$btn-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+  border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out !default;
+
+// Input
+$input-padding-y: 0.875rem !default;
+$input-padding-x: 0.5rem !default;
+$input-font-family: $font-family-base !default;
+$input-font-size: $font-size-base !default;
+$input-line-height: $line-height-base !default;
+$input-bg-color: var(--color-5) !default;
+$input-color: $black !default;

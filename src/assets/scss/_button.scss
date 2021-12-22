@@ -1,0 +1,35 @@
+.btn {
+  display: inline-block;
+  font-family: $btn-font-family;
+  font-weight: $btn-font-weight;
+  padding: $btn-padding-y $btn-padding-x;
+  color: $body-color;
+  text-align: center;
+  vertical-align: middle;
+  background-color: transparent;
+  border: $btn-border-width solid transparent;
+  word-wrap: normal;
+
+  &:hover,
+  &:focus,
+  &:active {
+    outline: 0;
+    text-decoration: none;
+    box-shadow: $btn-focus-box-shadow;
+  }
+
+  &.disabled,
+  &:disabled {
+    opacity: $btn-disabled-opacity;
+  }
+}
+
+.btn-default {
+  background-color: $btn-bg-color;
+  color: $btn-bg-color;
+}
+
+.btn-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
