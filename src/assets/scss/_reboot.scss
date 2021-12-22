@@ -1,5 +1,5 @@
 body.dark-theme {
-  @each $name, $value in $theme-ddark {
+  @each $name, $value in $theme-dark {
     --#{$name}: #{$value};
   }
 }
@@ -31,8 +31,50 @@ body {
   background-color: $body-bg;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin-top: 0;
+}
+
+%fontWeight {
+  font-weight: $font-weight-normal;
+}
+
+h1,
+.h1 {
+  line-height: $line-height-48;
+  font-size: $h1-font-size;
+}
+h2,
+.h2 {
+  line-height: $line-height-38;
+  font-size: $h2-font-size;
+}
+h3,
+.h3 {
+  line-height: $line-height-30;
+  font-size: $h3-font-size;
+  @extend %fontWeight;
+}
+h4,
+.h4 {
+  line-height: $line-height-24;
+  font-size: $h4-font-size;
+  @extend %fontWeight;
+}
+h5,
+.h5 {
+  line-height: $line-height-base;
+  font-size: $h5-font-size;
+  @extend %fontWeight;
+}
+h6,
+.h6 {
+  font-size: $h6-font-size;
 }
 
 p {

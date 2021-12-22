@@ -9,13 +9,16 @@
   background-color: transparent;
   border: $btn-border-width solid transparent;
   word-wrap: normal;
+  border-radius: $btn-radius;
 
   &:hover,
   &:focus,
   &:active {
     outline: 0;
     text-decoration: none;
+    cursor: pointer;
     box-shadow: $btn-focus-box-shadow;
+    font-weight: bold;
   }
 
   &.disabled,
@@ -26,10 +29,11 @@
 
 .btn-default {
   background-color: $btn-bg-color;
-  color: $btn-bg-color;
+  color: $btn-color;
 }
 
 .btn-icon {
-  width: 1.5rem;
-  height: 1.5rem;
+  i {
+    font-size: 1.5rem;
+  }
 }

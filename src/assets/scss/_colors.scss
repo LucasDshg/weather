@@ -1,0 +1,15 @@
+body.dark-theme {
+  @each $name, $value in $theme-dark {
+    .bg-#{$name}-opacity-80 {
+      background-color: rgb($value, 80%);
+    }
+  }
+}
+
+body.light-theme {
+  @each $name, $value in $theme-light {
+    .bg-#{$name}-opacity-80 {
+      background-color: rgb($value, 80%);
+    }
+  }
+}

@@ -1,0 +1,19 @@
+.container {
+  margin: 40px;
+}
+
+.grid-template-areas {
+  grid-gap: 1.625rem;
+  grid-template-areas:
+    "search-location result result"
+    "hourly hourly hourly"
+    "ten-days ten-days ten-days";
+}
+
+app-search-location {
+  grid-area: search-location;
+}
+
+app-result {
+  grid-area: result;
+}
