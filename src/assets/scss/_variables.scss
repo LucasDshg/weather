@@ -33,6 +33,20 @@ $theme-light: map-merge(
   $theme-light
 );
 
+//Spacing
+$spacing: () !default;
+$spacing: map-merge(
+  (
+    0: 0,
+    1: 0.5rem,
+    2: 1rem,
+    3: 1.5rem,
+    4: 2rem,
+    5: 2.5rem,
+  ),
+  $spacing
+);
+
 $body-color: var(--color-7) !default;
 $body-bg: var(--color-1) !default;
 
@@ -126,3 +140,8 @@ $input-bg-color: var(--color-5) !default;
 $input-color: $black !default;
 $input-border: none !default;
 $input-disabled-color: var(--color-5) !default;
+
+//List
+$list-border: $border-width solid $border-color !default;
+$list-item-padding-y: 0.5rem !default;
+$list-item-padding-x: 0 !default;

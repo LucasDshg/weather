@@ -48,12 +48,15 @@ h1,
 .h1 {
   line-height: $line-height-48;
   font-size: $h1-font-size;
+  @extend %fontWeight;
 }
 h2,
 .h2 {
   line-height: $line-height-38;
   font-size: $h2-font-size;
+  @extend %fontWeight;
 }
+
 h3,
 .h3 {
   line-height: $line-height-30;
