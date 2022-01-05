@@ -1,0 +1,19 @@
+.list-card {
+  display: grid;
+  grid-gap: 24px;
+  grid-auto-flow: column;
+	grid-template-columns: 10px;
+  grid-auto-columns: calc(50% - 430px);
+  grid-template-rows: minmax(240px, 1fr);
+
+  overflow-x: scroll;
+  scroll-snap-type: x proximity;
+  padding-bottom: calc(0.75 * 20px);
+  margin-bottom: calc(-0.25 * 20px);
+
+  &:before,
+  &:after {
+    content: "";
+    width: 10px;
+  }
+}

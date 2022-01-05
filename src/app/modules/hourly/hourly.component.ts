@@ -4,13 +4,11 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
   selector: 'app-hourly',
   templateUrl: './hourly.component.html',
   styleUrls: ['./hourly.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HourlyComponent implements OnInit {
+  show: boolean = true;
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

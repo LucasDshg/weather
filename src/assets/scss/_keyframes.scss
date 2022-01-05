@@ -1,0 +1,120 @@
+@mixin from-fadein {
+  opacity: 0;
+  visibility: hidden;
+}
+
+@mixin to-fadein {
+  opacity: 1;
+  visibility: visible;
+}
+
+@keyframes fade-in {
+  from {
+    @include from-fadein;
+  }
+  to {
+    @include to-fadein;
+  }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fade-in {
+  from {
+    @include from-fadein;
+  }
+  to {
+    @include to-fadein;
+  }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fade-in {
+  from {
+    @include from-fadein;
+  }
+  to {
+    @include to-fadein;
+  }
+}
+
+@keyframes fade-out {
+  from {
+    @include to-fadein;
+  }
+  to {
+    @include from-fadein;
+  }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fade-out {
+  from {
+    @include to-fadein;
+  }
+  to {
+    @include from-fadein;
+  }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fade-out {
+  from {
+    @include to-fadein;
+  }
+  to {
+    @include from-fadein;
+  }
+}
+
+@mixin openSlidePosition($position, $type) {
+  @if $type == "from" {
+    @if $position == "h" {
+      max-height: 0;
+    } @else {
+      max-width: 0;
+    }
+  } @else {
+    @if $position == "h" {
+      max-height: min-content;
+    } @else {
+      max-width: min-content;
+    }
+  }
+}
+
+@mixin openSlide($position: "h") {
+  @keyframes openSlide {
+    from {
+      @include from-fadein;
+      @include openSlidePosition($position);
+    }
+    to {
+      @include to-fadein;
+      @include openSlidePosition($position, "to");
+    }
+  }
+
+  /* Firefox < 16 */
+  @-moz-keyframes fadein {
+    from {
+      @include from-fadein;
+      @include openSlidePosition($position);
+    }
+    to {
+      @include to-fadein;
+      @include openSlidePosition($position, "to");
+    }
+  }
+
+  /* Safari, Chrome and Opera > 12.1 */
+  @-webkit-keyframes fadein {
+    from {
+      @include from-fadein;
+      @include openSlidePosition($position);
+    }
+    to {
+      @include to-fadein;
+      @include openSlidePosition($position, "to");
+    }
+  }
+}

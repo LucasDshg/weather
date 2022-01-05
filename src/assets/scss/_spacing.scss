@@ -34,3 +34,7 @@
     padding-right: #{$value} !important;
   }
 }
+
+@function spacer($size) {
+  @return map-get($map: $spacing, $key: $size);
+}

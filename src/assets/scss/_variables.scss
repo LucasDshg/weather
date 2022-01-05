@@ -100,6 +100,14 @@ $h4-font-size: 1.5rem !default;
 $h5-font-size: 1.125rem !default;
 $h6-font-size: $font-size-base !default;
 
+// Accordion
+$accordion-border-radius: $border-radius !default;
+$accordion-padding-x: 1.625rem !default;
+$accordion-padding-y: 1.625rem !default;
+$accordion-bg-color: transparentize(#1f1f1f, 0.8) !default;
+$accordion-transition-time: $transition-time-1 !default;
+$accordion-transition-type: $transition-type-2 !default;
+
 // Card
 $card-padding-x: 1.625rem !default;
 $card-padding-y: 1.625rem !default;
