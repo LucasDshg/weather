@@ -8,19 +8,19 @@
   box-shadow: $card-shadow;
   border: $card-border;
   border-radius: $card-border-radius;
-}
+ 
+	.card-title {
+    margin-bottom: 1rem;
+  }
 
-.card-title {
-  margin-bottom: 1rem;
-}
+  .card-body {
+    flex: 1 1 auto;
+    min-height: 1px;
+    padding: $card-padding-x $card-padding-y;
+    color: $card-color;
+  }
 
-.card-body {
-  flex: 1 1 auto;
-  min-height: 1px;
-  padding: $card-padding-x $card-padding-y;
-  color: $card-color;
-}
-
-.card-text {
-  margin-bottom: 1rem;
+  .card-text {
+    margin-bottom: 1rem;
+  }
 }

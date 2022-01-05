@@ -25,15 +25,14 @@
   &:disabled {
     opacity: $btn-disabled-opacity;
   }
-}
+  .btn-default {
+    background-color: $btn-bg-color;
+    color: $btn-color;
+  }
 
-.btn-default {
-  background-color: $btn-bg-color;
-  color: $btn-color;
-}
-
-.btn-icon {
-  i {
-    font-size: 1.5rem;
+  .btn-icon {
+    i {
+      font-size: 1.5rem;
+    }
   }
 }

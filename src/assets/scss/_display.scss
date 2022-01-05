@@ -1,27 +1,27 @@
 .d-flex {
-  display: flex;
+  display: flex !important;
 }
 
 .d-grid {
-  display: grid;
+  display: grid !important;
 }
 
 .d-block {
-  display: block;
+  display: block !important;
 }
 
 .d-inline-block {
-  display: inline-block;
+  display: inline-block !important;
 }
 
 .d-none {
-  display: none;
+  display: none !important;
 }
 
 .flex-column {
-  flex-direction: column;
+  flex-direction: column !important;
 }
 
 .flex-row {
-  flex-direction: row;
+  flex-direction: row !important;
 }

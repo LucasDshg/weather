@@ -1,10 +1,13 @@
 body.dark-theme {
   @each $name, $value in $theme-dark {
     .bg-#{$name}-opacity {
-      background-color: rgb($value, 80%);
+      background-color: rgb($value, 80%) !important;
     }
     .text-#{$name} {
-      color: $value;
+      color: $value !important;
+    }
+    .border-color-#{$name} {
+      border-color: $value !important;
     }
   }
 }
@@ -12,10 +15,13 @@ body.dark-theme {
 body.light-theme {
   @each $name, $value in $theme-light {
     .bg-#{$name}-opacity {
-      background-color: rgb($value, 80%);
+      background-color: rgb($value, 80%) !important;
     }
     .text-#{$name} {
-      color: $value;
+      color: $value !important;
+    }
+    .border-color-#{$name} {
+      border-color: $value !important;
     }
   }
 }
