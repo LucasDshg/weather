@@ -1,16 +1,28 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  Input,
+  Output,
+  EventEmitter,
+} from '@angular/core';
 
 @Component({
   selector: 'app-accordion',
   templateUrl: './accordion.component.html',
   styleUrls: ['./accordion.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AccordionComponent implements OnInit {
+  @Input('open') show: boolean = false;
+  @Input('accordionTitle') title: string = undefined;
 
-  constructor() { }
+  @Output('onclick') clickEnvent = new EventEmitter<boolean>(undefined);
 
-  ngOnInit(): void {
+  constructor() {}
+
+  ngOnInit(): void {}
+
+  click() {
+    this.show = !this.show;
+    this.clickEnvent.emit(this.show);
   }
-
 }

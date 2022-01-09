@@ -2,13 +2,19 @@
   border-radius: $accordion-border-radius;
   padding: $accordion-padding-x $accordion-padding-y;
   background-color: $accordion-bg-color;
-	
+
   &.show {
     .accordion-body {
       max-height: min-content;
       visibility: visible;
       opacity: 1;
-			animation: fade-in $accordion-transition-time $accordion-transition-type;
+      animation: fade-in $accordion-transition-time $accordion-transition-type;
+    }
+    .accordion-title {
+      .btn-icon i {
+        transform: rotate(-180deg);
+        transform-origin: center;
+      }
     }
   }
 
@@ -16,13 +22,19 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    cursor: pointer;
     margin-bottom: spacer(1);
+    .btn-icon i {
+      display: inherit;
+      font-size: $accordion-title-icon-size;
+      transition: all $accordion-transition-time $accordion-transition-type;
+    }
   }
-	
+
   .accordion-body {
-		max-height: 0;
+    max-height: 0;
     visibility: hidden;
     opacity: 0;
-		animation: fade-out $accordion-transition-time $accordion-transition-type;
+    animation: fade-out $accordion-transition-time $accordion-transition-type;
   }
 }

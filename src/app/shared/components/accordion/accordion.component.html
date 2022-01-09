@@ -1,1 +1,11 @@
-<p>accordion works!</p>
+<div class="accordion" [ngClass]="{ 'show': show }">
+  <div class="accordion-title" (click)="click()">
+    <h4 class="mb-0">{{ title }}</h4>
+    <button class="btn btn-icon" type="button">
+      <i class="ri-arrow-down-s-line"></i>
+    </button>
+  </div>
+  <div class="accordion-body">
+    <ng-content></ng-content>
+  </div>
+</div>
