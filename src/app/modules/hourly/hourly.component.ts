@@ -7,7 +7,7 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HourlyComponent implements OnInit {
-  show: boolean = true;
+
   constructor() {}
 
   ngOnInit(): void {}
