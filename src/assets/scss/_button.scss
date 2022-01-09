@@ -25,7 +25,7 @@
   &:disabled {
     opacity: $btn-disabled-opacity;
   }
-  .btn-default {
+  &.btn-default {
     background-color: $btn-bg-color;
     color: $btn-color;
   }
