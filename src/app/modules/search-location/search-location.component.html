@@ -3,12 +3,17 @@
     <div class="card-title d-flex justify-content-beetwen align-items-center">
       <h3 class="mb-0">Search Location</h3>
       <div>
-        <button class="btn btn-icon">
-          <i class="ri-sun-line"></i>
-        </button>
-        <button class="btn btn-icon">
-          <i class="ri-moon-line"></i>
-        </button>
+        <label for="theme" class="btn btn-icon">
+          <i [class]="iconTheme.light" class="mr-2"></i>
+          <i [class]="iconTheme.dark"></i>
+          <input
+            type="checkbox"
+            hidden
+            name="theme"
+            id="theme"
+            (change)="changeTheme()"
+          />
+        </label>
       </div>
     </div>
     <fieldset>
