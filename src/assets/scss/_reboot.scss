@@ -16,6 +16,14 @@ body.light-theme {
   box-sizing: border-box;
 }
 
+html,
+body {
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+	overflow: auto;
+}
+
 html {
   font-family: $font-family-base;
   line-height: 1.15;
@@ -29,6 +37,9 @@ body {
   color: $body-color;
   text-align: left;
   background-color: $body-bg;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 h1,
