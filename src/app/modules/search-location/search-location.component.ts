@@ -1,6 +1,6 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import { Subject } from 'rxjs';
 import { ThemeService } from 'src/app/shared/service/theme.service';
+import { SearchLocationService } from './service/seach-location.service';
 
 @Component({
   selector: 'app-search-location',
@@ -11,13 +11,21 @@ import { ThemeService } from 'src/app/shared/service/theme.service';
 export class SearchLocationComponent implements OnInit {
   iconTheme: { dark: string; light: string };
 
-  constructor(private _themeService: ThemeService) {}
+  constructor(
+    private _themeService: ThemeService,
+    private _searchLocationService: SearchLocationService
+  ) {}
 
   ngOnInit(): void {
     this.iconTheme = this._themeService.icons;
+    this._getLocation();
   }
 
   changeTheme() {
     this.iconTheme = this._themeService.changeTheme();
+  }
+
+  private _getLocation() {
+    this._searchLocationService.getLocation();
   }
 }
