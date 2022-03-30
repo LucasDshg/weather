@@ -8,10 +8,10 @@ import { map, switchMap, take } from 'rxjs/operators';
 })
 export class UnsplashService {
   private readonly _url = 'https://api.unsplash.com';
-	
+
   constructor(private _http: HttpClient) {}
 
-  getBackground(location: string = 'Vitória - ES') {
+  getBackground(location: string = 'Canada') {
     return this._getCollections().pipe(
       take(1),
       switchMap((collections) => {
