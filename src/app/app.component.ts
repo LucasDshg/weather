@@ -18,9 +18,9 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     this._backgroundService
       .getBackground()
-      .subscribe(
-        (imageUrl) =>
-          (this._document.body.style.backgroundImage = `url(${imageUrl})`)
-      );
+      .subscribe((imageUrl) => this._updateBackgroundImage(imageUrl));
   }
+
+  private _updateBackgroundImage = (imageUrl: string) =>
+    (this._document.body.style.backgroundImage = `url(${imageUrl})`);
 }

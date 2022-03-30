@@ -11,7 +11,7 @@ export class UnsplashService {
 
   constructor(private _http: HttpClient) {}
 
-  getBackground(location: string = 'Canada') {
+  getBackground(location: string = 'Rio de Janeiro') {
     return this._getCollections().pipe(
       take(1),
       switchMap((collections) => {
