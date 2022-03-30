@@ -1,60 +1,50 @@
 import { DOCUMENT } from '@angular/common';
 import { Inject, Injectable } from '@angular/core';
-
-
-declare type TIcon = { dark: string; light: string };
+import { BehaviorSubject, Observable, Subject } from 'rxjs';
+import { TIcon, TIconNames } from '../types/icon.types';
+import { TTheme } from '../types/theme.types';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ThemeService {
-  private readonly dark = 'dark-theme';
-  private readonly light = 'light-theme';
-
+  private readonly dark: TTheme = 'dark-theme';
+  private readonly light: TTheme = 'light-theme';
   private _iconTheme: TIcon = {
-    dark: 'ri-moon-fill',
-    light: 'ri-sun-line',
+    light: { moon: 'ri-moon-fill', sun: 'ri-sun-line' },
+    dark: { moon: 'ri-moon-line', sun: 'ri-sun-fill' },
   };
 
-  constructor(@Inject(DOCUMENT) private _document: Document) {}
+  private _iconTheme$ = new BehaviorSubject<TIconNames>(this._iconTheme.light);
+  constructor(@Inject(DOCUMENT) private _document: Document) {
+    (this._document.body.style as any).backdropFilter =
+      'brightness(0.2) blur(6px)';
+  }
 
-	
-	public get icons() : TIcon {
-		return this._iconTheme
-	}
+  public get icons(): Observable<TIconNames> {
+    return this._iconTheme$.asObservable();
+  }
+  private get _classTheme(): TTheme {
+    return this._document.body.classList.contains(this.light)
+      ? this.light
+      : this.dark;
+  }
 
-  changeTheme() {
-    const isDark = this._getClassTheme(this.dark);
-    const isLight = this._getClassTheme(this.light);
-
-    if (isDark) {
+  changeTheme(): void {
+    if (this._classTheme === this.dark) {
       this._document.body.classList.remove(this.dark);
       this._document.body.classList.add(this.light);
-      this._changeIcon(this.light);
-      return this._iconTheme;
-    }
+      (this._document.body.style as any).backdropFilter =
+        'brightness(1.5) contrast(0.2) blur(6px)';
 
-    if (isLight) {
+      this._iconTheme$.next(this._iconTheme.dark);
+    } else {
       this._document.body.classList.remove(this.light);
       this._document.body.classList.add(this.dark);
-      this._changeIcon(this.dark);
-      return this._iconTheme;
+      (this._document.body.style as any).backdropFilter =
+        'brightness(0.2) blur(6px)';
+
+      this._iconTheme$.next(this._iconTheme.light);
     }
   }
-
-  private _changeIcon(theme: string) {
-    if (theme === 'dark-theme')
-      this._iconTheme = {
-        dark: 'ri-sun-fill',
-        light: 'ri-moon-line',
-      };
-    else
-      this._iconTheme = {
-        dark: 'ri-sun-line',
-        light: 'ri-moon-fill',
-      };
-  }
-
-  private _getClassTheme = (value: string): boolean =>
-    this._document.body.classList.contains(value);
 }

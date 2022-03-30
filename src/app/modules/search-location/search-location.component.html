@@ -4,8 +4,8 @@
       <h3 class="mb-0">Search Location</h3>
       <div>
         <label for="theme" class="btn btn-icon">
-          <i [class]="iconTheme.light" class="mr-2"></i>
-          <i [class]="iconTheme.dark"></i>
+          <i [class]="(iconTheme$ | async).sun" class="mr-2"></i>
+          <i [class]="(iconTheme$ | async).moon"></i>
           <input
             type="checkbox"
             hidden

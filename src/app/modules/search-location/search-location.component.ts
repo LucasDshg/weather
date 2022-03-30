@@ -1,5 +1,7 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Observable } from 'rxjs';
 import { ThemeService } from 'src/app/shared/service/theme.service';
+import { TIcon, TIconNames } from 'src/app/shared/types/icon.types';
 import { SearchLocationService } from './service/seach-location.service';
 
 @Component({
@@ -9,7 +11,7 @@ import { SearchLocationService } from './service/seach-location.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SearchLocationComponent implements OnInit {
-  iconTheme: { dark: string; light: string };
+  iconTheme$: Observable<TIconNames>;
 
   constructor(
     private _themeService: ThemeService,
@@ -17,13 +19,11 @@ export class SearchLocationComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.iconTheme = this._themeService.icons;
+    this.iconTheme$ = this._themeService.icons;
     this._getLocation();
   }
 
-  changeTheme() {
-    this.iconTheme = this._themeService.changeTheme();
-  }
+  changeTheme = () => this._themeService.changeTheme();
 
   private _getLocation() {
     this._searchLocationService.getLocation();
