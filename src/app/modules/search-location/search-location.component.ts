@@ -16,7 +16,7 @@ export class SearchLocationComponent implements OnInit {
   constructor(
     private _themeService: ThemeService,
     private _searchLocationService: SearchLocationService
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.iconTheme$ = this._themeService.icons;
