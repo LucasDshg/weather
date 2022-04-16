@@ -1,7 +1,7 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { ACCESS_KEY } from 'src/app/keys/unsplash.key';
 import { map, switchMap, take } from 'rxjs/operators';
+import { ACCESS_KEY } from 'src/app/keys/unsplash.key';
 
 @Injectable({
   providedIn: 'root',
